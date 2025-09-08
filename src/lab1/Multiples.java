@@ -2,23 +2,24 @@ package lab1;
 
 public class Multiples {
     public static void main(String[] args) {
-        multiples();
+        int howMany = multiples(999, 3, 5);
+
+        System.out.println(howMany);
     }
 
-    private static void multiples() {
-        int limit = 1000;
+    public static int multiples(int n, int a, int b) {
         int howMany = 0;
         int i = 1;
 
-        while (i < limit) {
-            boolean divisibleBy3 = i % 3 == 0;
-            boolean divisibleBy5 = i % 5 == 0;
+        while (i < n) {
+            boolean divisibleBya = i % a == 0;
+            boolean divisibleByb = i % b == 0;
  
-            if (divisibleBy3 || divisibleBy5) {
+            if (divisibleBya || divisibleByb) {
                howMany++;
             }
             i++;
         }
-        System.out.println(howMany);
+        return howMany;
     }
 }
